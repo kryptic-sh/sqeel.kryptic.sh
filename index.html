@@ -100,13 +100,13 @@
         --border-strong: #2a3240;
         --fg: #e5e9f0;
         --fg-dim: #8b95a7;
-        --fg-muted: #5c6778;
+        --fg-muted: #8a93a4;
         --accent: #7ee787;
         --accent-dim: #3d7a45;
         --keyword: #c792ea;
         --string: #a3e88a;
         --number: #f78c6c;
-        --comment: #546e7a;
+        --comment: #8597a3;
         --red: #ff6b6b;
         --yellow: #ffd166;
         --mono:
@@ -734,6 +734,8 @@
         color: var(--fg-muted);
         font-family: var(--mono);
         font-size: 13px;
+      }
+      .footer-inner {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -793,7 +795,7 @@
       </div>
     </nav>
 
-    <div class="wrap">
+    <main class="wrap">
       <header class="hero">
         <div class="badges">
           <span class="badge live">● v0.1</span>
@@ -1083,16 +1085,18 @@ url = <span class="str">"mysql://localhost/mydb"</span>
           </div>
         </div>
       </section>
+    </main>
 
-      <footer>
+    <footer>
+      <div class="wrap footer-inner">
         <div>sqeel · MIT · built in Rust</div>
         <div>
           <a href="https://github.com/sqeel-sql/sqeel">github</a> ·
           <a href="https://github.com/sqeel-sql/sqeel/releases">releases</a> ·
           <a href="https://github.com/sqeel-sql/sqeel/issues">issues</a>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
 
     <script>
       // install tabs
