@@ -750,18 +750,29 @@
     </style>
     <!-- Google tag (gtag.js) -->
     <script>
-      window.addEventListener('load', function () {
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-N5PT60107K';
-        document.head.appendChild(s);
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
+      (function () {
+        var loaded = false;
+        function loadGA() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-N5PT60107K';
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'G-N5PT60107K');
         }
-        gtag('js', new Date());
-        gtag('config', 'G-N5PT60107K');
-      });
+        ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(
+          function (e) {
+            window.addEventListener(e, loadGA, { once: true, passive: true });
+          }
+        );
+        setTimeout(loadGA, 8000);
+      })();
     </script>
   </head>
   <body>
